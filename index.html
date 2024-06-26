@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spooky Story Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#generator">Story Generator</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Spooky Story Generator</h1>
+            <p>Enter the dark realm of endless stories...</p>
+        </div>
+    </header>
+
+    <section id="generator" class="spooky">
+        <h1>Create Your Spooky Story</h1>
+        <form id="story-form">
+            <label for="character">Main Character:</label>
+            <input type="text" id="character" name="character" required>
+
+            <label for="setting">Setting:</label>
+            <input type="text" id="setting" name="setting" required>
+
+            <label for="object">Creepy Object:</label>
+            <input type="text" id="object" name="object" required>
+
+            <input type="submit" value="Generate Story">
+        </form>
+
+        <div id="story-output" class="story-output hidden">
+            <h2>Your Spooky Story</h2>
+            <p id="story-text"></p>
+            <button id="new-story">Generate New Story</button>
+        </div>
+
+        <div id="story-feedback" class="story-feedback hidden">
+            <h2>Rate this Story</h2>
+            <p>How scary was this story?</p>
+            <div class="rating">
+                <button class="rating-btn" data-rating="1">1</button>
+                <button class="rating-btn" data-rating="2">2</button>
+                <button class="rating-btn" data-rating="3">3</button>
+                <button class="rating-btn" data-rating="4">4</button>
+                <button class="rating-btn" data-rating="5">5</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="spooky">
+        <h1>About This Project</h1>
+        <p>This project was created to demonstrate the power of web development in creating interactive and engaging experiences. The Spooky Story Generator uses simple HTML, CSS, and JavaScript to bring your spooky imaginations to life.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Spooky Story Generator</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

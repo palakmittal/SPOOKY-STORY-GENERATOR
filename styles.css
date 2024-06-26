@@ -1,0 +1,220 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #1f1f1f;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  color: #ffa500;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.hero h1 {
+  font-family: 'Creepster', cursive;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #ffa500;
+  animation: flicker 2s infinite alternate;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ff8c00;
+}
+
+.spooky {
+  background-color: #333;
+  padding: 40px 20px;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: 'Creepster', cursive;
+  color: #ffa500;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background-color: #444;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+form input[type="submit"], #new-story, .rating-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+form input[type="submit"]:hover, #new-story:hover, .rating-btn:hover {
+  background-color: #ff8c00;
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+#story-output {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#story-text {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: spookyFade 2s forwards;
+}
+
+#story-feedback {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.rating-btn {
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.rating-btn:hover {
+  background-color: #ff8c00;
+  transform: scale(1.1);
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+  }
+  20%, 24%, 55% {
+      opacity: 0;
+  }
+}
+
+@keyframes spookyFade {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Additional spooky effects */
+.spooky::before, .spooky::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+  transform: rotate(-2deg);
+  animation: spookyFrame 4s infinite alternate;
+}
+
+.spooky::after {
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  transform: rotate(2deg);
+  animation: spookyFrame 4s infinite alternate-reverse;
+}
+
+@keyframes spookyFrame {
+  0% {
+      transform: rotate(2deg);
+  }
+  100% {
+      transform: rotate(-2deg);
+  }
+}
